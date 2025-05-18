@@ -1,0 +1,21 @@
+# Wrangler configuration for PoW Shield Worker
+name = "pow-shield-worker"
+main = "worker.js"
+compatibility_date = "2025-05-01"
+
+[vars]
+PROTECTED_ENDPOINTS = "__ENDPOINTS__"
+POW_DIFFICULTY = "__DIFFICULTY__"
+POW_TIMESTAMP_TOLERANCE = "__TIMESTAMP_TOLERANCE__"
+POW_CACHE_SIZE = "__CACHE_SIZE__"
+RATE_LIMITING = "__RATE_LIMITING__"
+REQUESTS_PER_MINUTE = "__REQUESTS_PER_MINUTE__"
+
+# The secret must be set separately using:
+# wrangler secret put POW_SECRET
+
+# Customize routes as needed
+# [triggers]
+# routes = [
+#   { pattern = "__ROUTE_PATTERN__", zone_name = "__ZONE_NAME__" }
+# ]
