@@ -1,5 +1,6 @@
-import { PowShieldConfig, validateAndMergeConfig } from './config';
-import { CryptoUtils } from './utils/crypto';
+import type { PowShieldConfig } from './config.js';
+import { validateAndMergeConfig } from './config.js';
+import { CryptoUtils } from './utils/crypto.js';
 import { LRUCache } from 'lru-cache';
 
 export class PowCloudflare {
@@ -7,7 +8,7 @@ export class PowCloudflare {
   private nonceCache: LRUCache<string, boolean>;
 
   constructor(config: Partial<PowShieldConfig>) {
-    this.config = validateAndMergeConfig(config);
+    this.config = validateAndMergeConfig(config, 'cloudflare');
     
     // Initialize nonce cache
     this.nonceCache = new LRUCache({

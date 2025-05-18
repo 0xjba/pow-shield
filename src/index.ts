@@ -1,13 +1,15 @@
-import { PowShieldConfig, validateAndMergeConfig } from './config';
-import { PowClient } from './client';
-import { PowCloudflare } from './cloudflare';
-import { PowServer } from './server';
+import { validateAndMergeConfig } from './config.js';
+import { PowClient } from './client.js';
+import { PowCloudflare } from './cloudflare.js';
+import { PowServer } from './server.js';
 
 // Export all components directly
 export { 
-  PowShieldConfig,
   PowClient, 
   PowCloudflare, 
   PowServer,
   validateAndMergeConfig 
 };
+
+// Export types
+export type { PowShieldConfig } from './config.js';

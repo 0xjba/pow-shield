@@ -1,11 +1,12 @@
-import { PowShieldConfig, validateAndMergeConfig } from './config';
-import { CryptoUtils } from './utils/crypto';
+import type { PowShieldConfig } from './config.js';
+import { validateAndMergeConfig } from './config.js';
+import { CryptoUtils } from './utils/crypto.js';
 
 export class PowServer {
   private config: PowShieldConfig;
 
   constructor(config: Partial<PowShieldConfig>) {
-    this.config = validateAndMergeConfig(config);
+    this.config = validateAndMergeConfig(config, 'server');
   }
 
   /**

@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "description": "A Proof-of-Work protection system for securing API endpoints",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
   "browser": "dist/browser.js",
   "types": "dist/index.d.ts",
   "bin": {
@@ -14,30 +13,30 @@
     ".": {
       "types": "./dist/index.d.ts",
       "browser": "./dist/browser.js",
-      "import": "./dist/index.esm.js",
+      "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
     "./client": {
       "types": "./dist/client.d.ts",
       "browser": "./dist/client.browser.js",
-      "import": "./dist/client.esm.js",
+      "import": "./dist/client.js",
       "require": "./dist/client.js"
     },
     "./server": {
       "types": "./dist/server.d.ts",
-      "import": "./dist/server.esm.js",
+      "import": "./dist/server.js",
       "require": "./dist/server.js"
     },
     "./cloudflare": {
       "types": "./dist/cloudflare.d.ts",
-      "import": "./dist/cloudflare.esm.js",
+      "import": "./dist/cloudflare.js",
       "require": "./dist/cloudflare.js"
     }
   },
   "scripts": {
     "build": "npm run build:clean && npm run build:compile && npm run build:bundle",
-    "build:clean": "rm -rf dist/",
-    "build:compile": "tsc && tsc -p tsconfig.esm.json",
+    "build:clean": "rm -rf dist/ dist-esm/",
+    "build:compile": "tsc",
     "build:bundle": "rollup -c rollup.config.js",
     "test": "jest",
     "prepare": "npm run build"
